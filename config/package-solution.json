@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "grid-cards-central-axity-client-side-solution",
+    "id": "af204607-57b5-4dd2-aee0-e8897001ed25",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.17.4"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "grid-cards-central-axity description"
+      },
+      "longDescription": {
+        "default": "grid-cards-central-axity description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "grid-cards-central-axity Feature",
+        "description": "The feature that activates elements of the grid-cards-central-axity solution.",
+        "id": "33c045ed-6d34-49ce-a0c2-e835b4a16045",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/grid-cards-central-axity.sppkg"
+  }
+}

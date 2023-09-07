@@ -1,0 +1,93 @@
+@import "~@fluentui/react/dist/sass/References.scss";
+
+.cards__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: center;
+}
+
+.card {
+  padding: 50px 40px 30px 40px;
+  color: #fff;
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+
+.typeBackground__1 {
+  border-radius: 16px;
+  background: linear-gradient(102deg, #963cbd 2.01%, #f4364c 96.41%);
+  width: 21%;
+}
+
+.typeBackground__2 {
+  border-radius: 16px;
+  background: linear-gradient(289deg, #963cbd 3.37%, #3cfe90 100%);
+  width: 21%;
+}
+
+.typeBackground__3 {
+  border-radius: 16px;
+  background: linear-gradient(289deg, #963cbd 3.41%, #ff832a 68.31%);
+  width: 21%;
+}
+
+.typeBackground__4 {
+  border-radius: 16px;
+  background: linear-gradient(288deg, #783cbd 2.25%, #04d6ff 100%);
+  width: 21%;
+}
+
+.typeBackground__5 {
+  border-radius: 16px;
+  background: linear-gradient(102deg, #963cbd 2.01%, #f4364c 96.41%);
+  width: 38%;
+}
+
+.typeBackground__6 {
+  border-radius: 16px;
+  background: linear-gradient(289deg, #963cbd 3.37%, #3cfe90 100%);
+  width: 38%;
+}
+
+.typeBackground__7 {
+  border-radius: 16px;
+  background: linear-gradient(289deg, #963cbd 3.41%, #ff832a 68.31%);
+  width: 38%;
+}
+
+.typeBackground__8 {
+  border-radius: 16px;
+  background: linear-gradient(288deg, #783cbd 2.25%, #04d6ff 100%);
+  width: 38%;
+}
+
+@media (max-width: 768px) {
+  .typeBackground__1,
+  .typeBackground__2,
+  .typeBackground__3,
+  .typeBackground__4 {
+    width: 34%;
+  }
+
+  .typeBackground__5,
+  .typeBackground__6,
+  .typeBackground__7,
+  .typeBackground__8 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 568px) {
+  .typeBackground__1,
+  .typeBackground__2,
+  .typeBackground__3,
+  .typeBackground__4,
+  .typeBackground__5,
+  .typeBackground__6,
+  .typeBackground__7,
+  .typeBackground__8 {
+    width: 100%;
+  }
+}
