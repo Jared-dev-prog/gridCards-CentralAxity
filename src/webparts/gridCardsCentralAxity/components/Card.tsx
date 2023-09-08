@@ -1,34 +1,31 @@
 import * as React from "react";
-import styles from "./GridCardsCentralAxity.module.scss";
 import { ICardProps } from "./IGridCardsCentralAxityProps";
+import "bootstrap/dist/css/bootstrap.min.css";
+import styles from "./GridCardsCentralAxity.module.scss";
 
 const Card: React.FC<ICardProps> = (props) => {
-  const { background, text, link } = props;
+  const { background, text, link, withContent } = props;
 
   return (
-    <a
-      href={link}
-      className={`${
-        background === "1"
-          ? styles.typeBackground__1
-          : background === "2"
-          ? styles.typeBackground__2
-          : background === "3"
-          ? styles.typeBackground__3
-          : background === "4"
-          ? styles.typeBackground__4
-          : background === "5"
-          ? styles.typeBackground__5
-          : background === "6"
-          ? styles.typeBackground__6
-          : background === "7"
-          ? styles.typeBackground__7
-          : background === "8"
-          ? styles.typeBackground__8
-          : ""
-      } ${styles.card}`}>
-      {text}
-    </a>
+    <div className={`${withContent} ${styles.curso_pointer} `}>
+      <div
+        className={`${
+          background === "bg_1"
+            ? styles.bg_1
+            : background === "bg_2"
+            ? styles.bg_2
+            : background === "bg_3"
+            ? styles.bg_3
+            : background === "bg_4"
+            ? styles.bg_4
+            : styles.default
+        } p-3 d-flex justify-content-center ${styles.card} `}
+      >
+        <a href={link} className={`${styles.link}`}>
+          {text}
+        </a>
+      </div>
+    </div>
   );
 };
 

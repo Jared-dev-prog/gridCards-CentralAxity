@@ -1,14 +1,13 @@
 declare const styles: {
     cards__container: string;
     card: string;
-    typeBackground__1: string;
-    typeBackground__2: string;
-    typeBackground__3: string;
-    typeBackground__4: string;
-    typeBackground__5: string;
-    typeBackground__6: string;
-    typeBackground__7: string;
-    typeBackground__8: string;
+    curso_pointer: string;
+    bg_1: string;
+    bg_2: string;
+    bg_3: string;
+    bg_4: string;
+    default: string;
+    link: string;
 };
 export default styles;
 //# sourceMappingURL=GridCardsCentralAxity.module.scss.d.ts.map

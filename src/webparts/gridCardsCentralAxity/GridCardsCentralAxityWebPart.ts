@@ -1,13 +1,19 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
 import { Version } from "@microsoft/sp-core-library";
-import { IPropertyPaneConfiguration, PropertyPaneTextField } from "@microsoft/sp-property-pane";
+import {
+  IPropertyPaneConfiguration,
+  PropertyPaneTextField,
+} from "@microsoft/sp-property-pane";
 import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
 import { IReadonlyTheme } from "@microsoft/sp-component-base";
 
 import * as strings from "GridCardsCentralAxityWebPartStrings";
 import GridCardsCentralAxity from "./components/GridCardsCentralAxity";
-import { ICard, IGridCardsCentralAxityProps } from "./components/IGridCardsCentralAxityProps";
+import {
+  ICard,
+  IGridCardsCentralAxityProps,
+} from "./components/IGridCardsCentralAxityProps";
 
 import {
   PropertyFieldCollectionData,
@@ -24,17 +30,15 @@ export default class GridCardsCentralAxityWebPart extends BaseClientSideWebPart<
   private _environmentMessage: string = "";
 
   public render(): void {
-    const element: React.ReactElement<IGridCardsCentralAxityProps> = React.createElement(
-      GridCardsCentralAxity,
-      {
+    const element: React.ReactElement<IGridCardsCentralAxityProps> =
+      React.createElement(GridCardsCentralAxity, {
         description: this.properties.description,
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
         userDisplayName: this.context.pageContext.user.displayName,
         collectionData: this.properties.collectionData,
-      }
-    );
+      });
 
     ReactDom.render(element, this.domElement);
   }
@@ -48,30 +52,32 @@ export default class GridCardsCentralAxityWebPart extends BaseClientSideWebPart<
   private _getEnvironmentMessage(): Promise<string> {
     if (!!this.context.sdks.microsoftTeams) {
       // running in Teams, office.com or Outlook
-      return this.context.sdks.microsoftTeams.teamsJs.app.getContext().then((context) => {
-        let environmentMessage: string = "";
-        switch (context.app.host.name) {
-          case "Office": // running in Office
-            environmentMessage = this.context.isServedFromLocalhost
-              ? strings.AppLocalEnvironmentOffice
-              : strings.AppOfficeEnvironment;
-            break;
-          case "Outlook": // running in Outlook
-            environmentMessage = this.context.isServedFromLocalhost
-              ? strings.AppLocalEnvironmentOutlook
-              : strings.AppOutlookEnvironment;
-            break;
-          case "Teams": // running in Teams
-            environmentMessage = this.context.isServedFromLocalhost
-              ? strings.AppLocalEnvironmentTeams
-              : strings.AppTeamsTabEnvironment;
-            break;
-          default:
-            throw new Error("Unknown host");
-        }
+      return this.context.sdks.microsoftTeams.teamsJs.app
+        .getContext()
+        .then((context) => {
+          let environmentMessage: string = "";
+          switch (context.app.host.name) {
+            case "Office": // running in Office
+              environmentMessage = this.context.isServedFromLocalhost
+                ? strings.AppLocalEnvironmentOffice
+                : strings.AppOfficeEnvironment;
+              break;
+            case "Outlook": // running in Outlook
+              environmentMessage = this.context.isServedFromLocalhost
+                ? strings.AppLocalEnvironmentOutlook
+                : strings.AppOutlookEnvironment;
+              break;
+            case "Teams": // running in Teams
+              environmentMessage = this.context.isServedFromLocalhost
+                ? strings.AppLocalEnvironmentTeams
+                : strings.AppTeamsTabEnvironment;
+              break;
+            default:
+              throw new Error("Unknown host");
+          }
 
-        return environmentMessage;
-      });
+          return environmentMessage;
+        });
     }
 
     return Promise.resolve(
@@ -90,9 +96,15 @@ export default class GridCardsCentralAxityWebPart extends BaseClientSideWebPart<
     const { semanticColors } = currentTheme;
 
     if (semanticColors) {
-      this.domElement.style.setProperty("--bodyText", semanticColors.bodyText || null);
+      this.domElement.style.setProperty(
+        "--bodyText",
+        semanticColors.bodyText || null
+      );
       this.domElement.style.setProperty("--link", semanticColors.link || null);
-      this.domElement.style.setProperty("--linkHovered", semanticColors.linkHovered || null);
+      this.domElement.style.setProperty(
+        "--linkHovered",
+        semanticColors.linkHovered || null
+      );
     }
   }
 
@@ -132,9 +144,16 @@ export default class GridCardsCentralAxityWebPart extends BaseClientSideWebPart<
                       required: true,
                     },
                     {
+                      id: "withContent",
+                      title: "options (col-lg-4 col-md-2 col-sm-12)",
+                      type: CustomCollectionFieldType.string,
+                      required: true,
+                    },
+                    {
                       id: "typeBackground",
-                      title: "Background options (1, 2, 3, 4, 5, 6, 7, 8)",
-                      type: CustomCollectionFieldType.number,
+                      title:
+                        "Background options (background_1,background_2, background_3, background_4)",
+                      type: CustomCollectionFieldType.string,
                       required: true,
                     },
                     {

@@ -3,91 +3,51 @@
 .cards__container {
   display: flex;
   flex-wrap: wrap;
-  gap: 28px;
+  margin-right: 15px;
+  margin-right: 15px;
+  margin-left: 0px;
+}
+.card {
+  height: 130px;
+  margin-bottom: 18px;
   align-items: center;
+  &:hover {
+    -webkit-box-shadow: 10px 10px 14px 2px rgba(0, 0, 0, 0.47);
+    box-shadow: 10px 10px 14px 2px rgba(0, 0, 0, 0.47);
+  }
 }
 
-.card {
-  padding: 50px 40px 30px 40px;
+.curso_pointer {
+  cursor: pointer;
+}
+
+.bg_1 {
+  border-radius: 16px;
+  background: linear-gradient(102deg, #963cbd 2.01%, #f4364c 96.41%);
+}
+
+.bg_2 {
+  border-radius: 16px;
+  background: linear-gradient(289deg, #963cbd 3.37%, #3cfe90 100%);
+}
+
+.bg_3 {
+  border-radius: 16px;
+  background: linear-gradient(289deg, #963cbd 3.41%, #ff832a 68.31%);
+}
+
+.bg_4 {
+  border-radius: 16px;
+  background: linear-gradient(288deg, #783cbd 2.25%, #04d6ff 100%);
+}
+
+.default {
+  border-radius: 16px;
+  background: linear-gradient(288deg, #783cbd 2.25%, #04d6ff 100%);
+}
+.link {
+  text-decoration: none;
   color: #fff;
   font-weight: 700;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-decoration: none;
-}
-
-.typeBackground__1 {
-  border-radius: 16px;
-  background: linear-gradient(102deg, #963cbd 2.01%, #f4364c 96.41%);
-  width: 21%;
-}
-
-.typeBackground__2 {
-  border-radius: 16px;
-  background: linear-gradient(289deg, #963cbd 3.37%, #3cfe90 100%);
-  width: 21%;
-}
-
-.typeBackground__3 {
-  border-radius: 16px;
-  background: linear-gradient(289deg, #963cbd 3.41%, #ff832a 68.31%);
-  width: 21%;
-}
-
-.typeBackground__4 {
-  border-radius: 16px;
-  background: linear-gradient(288deg, #783cbd 2.25%, #04d6ff 100%);
-  width: 21%;
-}
-
-.typeBackground__5 {
-  border-radius: 16px;
-  background: linear-gradient(102deg, #963cbd 2.01%, #f4364c 96.41%);
-  width: 38%;
-}
-
-.typeBackground__6 {
-  border-radius: 16px;
-  background: linear-gradient(289deg, #963cbd 3.37%, #3cfe90 100%);
-  width: 38%;
-}
-
-.typeBackground__7 {
-  border-radius: 16px;
-  background: linear-gradient(289deg, #963cbd 3.41%, #ff832a 68.31%);
-  width: 38%;
-}
-
-.typeBackground__8 {
-  border-radius: 16px;
-  background: linear-gradient(288deg, #783cbd 2.25%, #04d6ff 100%);
-  width: 38%;
-}
-
-@media (max-width: 768px) {
-  .typeBackground__1,
-  .typeBackground__2,
-  .typeBackground__3,
-  .typeBackground__4 {
-    width: 34%;
-  }
-
-  .typeBackground__5,
-  .typeBackground__6,
-  .typeBackground__7,
-  .typeBackground__8 {
-    width: 100%;
-  }
-}
-
-@media (max-width: 568px) {
-  .typeBackground__1,
-  .typeBackground__2,
-  .typeBackground__3,
-  .typeBackground__4,
-  .typeBackground__5,
-  .typeBackground__6,
-  .typeBackground__7,
-  .typeBackground__8 {
-    width: 100%;
-  }
 }
