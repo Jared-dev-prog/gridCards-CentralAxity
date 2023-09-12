@@ -13980,7 +13980,7 @@ __webpack_require__.r(__webpack_exports__);
 var GridCardsCentralAxity = function (props) {
     var collectionData = props.collectionData;
     return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: "".concat(_GridCardsCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].cards__container, " row") }, collectionData !== undefined
-        ? collectionData.map(function (item, index) { return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Card__WEBPACK_IMPORTED_MODULE_2__["default"], { key: index, text: item.text, background: item.typeBackground, withContent: item.withContent, link: item.link })); })
+        ? collectionData.map(function (item, index) { return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_Card__WEBPACK_IMPORTED_MODULE_2__["default"], { key: index, text: item.text, background: item.typeBackground, withContent: item.withContent, link: item.link, typeOpen: item.typeOpen })); })
         : ""));
 };
 /* harmony default export */ __webpack_exports__["default"] = (GridCardsCentralAxity);
@@ -14534,7 +14534,7 @@ function omit(obj, exclusions) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "JPst");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".cards__container_687b4158{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:0;margin-right:15px}.card_687b4158{-ms-flex-align:center;align-items:center;height:130px;margin-bottom:18px}.card_687b4158:hover{box-shadow:10px 10px 14px 2px rgba(0,0,0,.47)}.curso_pointer_687b4158{cursor:pointer}.bg_1_687b4158{background:linear-gradient(102deg,#963cbd 2.01%,#f4364c 96.41%);border-radius:16px}.bg_2_687b4158{background:linear-gradient(289deg,#963cbd 3.37%,#3cfe90);border-radius:16px}.bg_3_687b4158{background:linear-gradient(289deg,#963cbd 3.41%,#ff832a 68.31%);border-radius:16px}.bg_4_687b4158,.default_687b4158{background:linear-gradient(288deg,#783cbd 2.25%,#04d6ff);border-radius:16px}.link_687b4158{color:#fff;font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;font-weight:700;text-decoration:none}", ""]);
+exports.push([module.i, ".cards__container_b5ac844a{-ms-flex-pack:center;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;justify-content:center;margin-left:0;margin-right:15px;width:100%}.card_b5ac844a{-ms-flex-align:center;align-items:center;height:130px;margin-bottom:18px}.card_b5ac844a:hover{box-shadow:10px 10px 14px 2px rgba(0,0,0,.47)}.curso_pointer_b5ac844a{cursor:pointer}.bg_1_b5ac844a{background:linear-gradient(102deg,#963cbd 2.01%,#f4364c 96.41%);border-radius:16px}.bg_2_b5ac844a{background:linear-gradient(289deg,#963cbd 3.37%,#3cfe90);border-radius:16px}.bg_3_b5ac844a{background:linear-gradient(289deg,#963cbd 3.41%,#ff832a 68.31%);border-radius:16px}.bg_4_b5ac844a,.default_b5ac844a{background:linear-gradient(288deg,#783cbd 2.25%,#04d6ff);border-radius:16px}.link_b5ac844a{color:#fff;font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;font-size:18px;font-weight:700;text-decoration:none}", ""]);
 // Exports
 module.exports = exports;
 
@@ -19970,26 +19970,32 @@ var GridCardsCentralAxityWebPart = /** @class */ (function (_super) {
                                     value: this.properties.collectionData,
                                     fields: [
                                         {
+                                            id: "text",
+                                            title: "Text",
+                                            type: _pnp_spfx_property_controls_lib_PropertyFieldCollectionData__WEBPACK_IMPORTED_MODULE_7__["CustomCollectionFieldType"].string,
+                                            required: true,
+                                        },
+                                        {
                                             id: "link",
                                             title: "Link",
                                             type: _pnp_spfx_property_controls_lib_PropertyFieldCollectionData__WEBPACK_IMPORTED_MODULE_7__["CustomCollectionFieldType"].string,
                                             required: true,
                                         },
                                         {
-                                            id: "withContent",
-                                            title: "options (col-lg-4 col-md-2 col-sm-12)",
+                                            id: "typeOpen",
+                                            title: "Type open options: popup | _self | _blank",
                                             type: _pnp_spfx_property_controls_lib_PropertyFieldCollectionData__WEBPACK_IMPORTED_MODULE_7__["CustomCollectionFieldType"].string,
                                             required: true,
                                         },
                                         {
                                             id: "typeBackground",
-                                            title: "Background options (background_1,background_2, background_3, background_4)",
+                                            title: "Background options (bg_1,bg_2, bg_3, bg_4)",
                                             type: _pnp_spfx_property_controls_lib_PropertyFieldCollectionData__WEBPACK_IMPORTED_MODULE_7__["CustomCollectionFieldType"].string,
                                             required: true,
                                         },
                                         {
-                                            id: "text",
-                                            title: "Text",
+                                            id: "withContent",
+                                            title: "options (col-lg-4 col-md-2 col-sm-12)",
                                             type: _pnp_spfx_property_controls_lib_PropertyFieldCollectionData__WEBPACK_IMPORTED_MODULE_7__["CustomCollectionFieldType"].string,
                                             required: true,
                                         },
@@ -30347,9 +30353,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Card = function (props) {
-    var background = props.background, text = props.text, link = props.link, withContent = props.withContent;
+    var background = props.background, text = props.text, link = props.link, withContent = props.withContent, typeOpen = props.typeOpen;
+    var handleRedirect = function () {
+        if (typeOpen === "popup") {
+            window.open(link, "", typeOpen);
+        }
+        else {
+            window.open(link, typeOpen);
+        }
+    };
     return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: "".concat(withContent, " ").concat(_GridCardsCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].curso_pointer, " ") },
-        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: "".concat(background === "bg_1"
+        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { onClick: handleRedirect, className: "".concat(background === "bg_1"
                 ? _GridCardsCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].bg_1
                 : background === "bg_2"
                     ? _GridCardsCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].bg_2
@@ -30358,7 +30372,7 @@ var Card = function (props) {
                         : background === "bg_4"
                             ? _GridCardsCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].bg_4
                             : _GridCardsCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].default, " p-3 d-flex justify-content-center ").concat(_GridCardsCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].card, " ") },
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: link, className: "".concat(_GridCardsCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].link) }, text))));
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: "".concat(_GridCardsCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].link) }, text))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Card);
 
@@ -36166,15 +36180,15 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 __webpack_require__(/*! ./GridCardsCentralAxity.module.css */ "yxGg");
 var styles = {
-    cards__container: 'cards__container_687b4158',
-    card: 'card_687b4158',
-    curso_pointer: 'curso_pointer_687b4158',
-    bg_1: 'bg_1_687b4158',
-    bg_2: 'bg_2_687b4158',
-    bg_3: 'bg_3_687b4158',
-    bg_4: 'bg_4_687b4158',
-    default: 'default_687b4158',
-    link: 'link_687b4158'
+    cards__container: 'cards__container_b5ac844a',
+    card: 'card_b5ac844a',
+    curso_pointer: 'curso_pointer_b5ac844a',
+    bg_1: 'bg_1_b5ac844a',
+    bg_2: 'bg_2_b5ac844a',
+    bg_3: 'bg_3_b5ac844a',
+    bg_4: 'bg_4_b5ac844a',
+    default: 'default_b5ac844a',
+    link: 'link_b5ac844a'
 };
 /* harmony default export */ __webpack_exports__["default"] = (styles);
 /* tslint:enable */ 

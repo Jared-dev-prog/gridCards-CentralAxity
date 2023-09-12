@@ -18,6 +18,7 @@ const GridCardsCentralAxity: React.FC<IGridCardsCentralAxityProps> = (
               background={item.typeBackground}
               withContent={item.withContent}
               link={item.link}
+              typeOpen={item.typeOpen}
             />
           ))
         : ""}

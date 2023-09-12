@@ -3,7 +3,7 @@
   "solution": {
     "name": "grid-cards-central-axity-client-side-solution",
     "id": "af204607-57b5-4dd2-aee0-e8897001ed25",
-    "version": "1.0.0.1",
+    "version": "1.0.0.2",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "grid-cards-central-axity Feature",
         "description": "The feature that activates elements of the grid-cards-central-axity solution.",
         "id": "33c045ed-6d34-49ce-a0c2-e835b4a16045",
-        "version": "1.0.0.0"
+        "version": "1.0.0.2"
       }
     ]
   },

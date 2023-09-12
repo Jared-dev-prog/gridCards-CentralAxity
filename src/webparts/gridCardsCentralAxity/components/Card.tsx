@@ -4,11 +4,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./GridCardsCentralAxity.module.scss";
 
 const Card: React.FC<ICardProps> = (props) => {
-  const { background, text, link, withContent } = props;
-
+  const { background, text, link, withContent, typeOpen } = props;
+  const handleRedirect = (): void => {
+    if (typeOpen === "popup") {
+      window.open(link, "", typeOpen);
+    } else {
+      window.open(link, typeOpen);
+    }
+  };
   return (
     <div className={`${withContent} ${styles.curso_pointer} `}>
       <div
+        onClick={handleRedirect}
         className={`${
           background === "bg_1"
             ? styles.bg_1
@@ -21,9 +28,7 @@ const Card: React.FC<ICardProps> = (props) => {
             : styles.default
         } p-3 d-flex justify-content-center ${styles.card} `}
       >
-        <a href={link} className={`${styles.link}`}>
-          {text}
-        </a>
+        <div className={`${styles.link}`}>{text}</div>
       </div>
     </div>
   );

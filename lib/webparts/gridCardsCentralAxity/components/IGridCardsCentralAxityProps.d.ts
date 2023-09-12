@@ -11,11 +11,13 @@ export interface ICardProps {
     text: string;
     link: string;
     withContent: string;
+    typeOpen: string;
 }
 export interface ICard {
     typeBackground: string;
     text: string;
     link: string;
     withContent: string;
+    typeOpen: string;
 }
 //# sourceMappingURL=IGridCardsCentralAxityProps.d.ts.map

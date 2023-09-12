@@ -11,6 +11,7 @@ export interface ICardProps {
   text: string;
   link: string;
   withContent: string;
+  typeOpen: string;
 }
 
 export interface ICard {
@@ -18,4 +19,5 @@ export interface ICard {
   text: string;
   link: string;
   withContent: string;
+  typeOpen: string;
 }
